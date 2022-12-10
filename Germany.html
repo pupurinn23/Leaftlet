@@ -1,0 +1,106 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first Leaflet</title>
+  <!--link Leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+</head>
+
+<h1><center>
+  <b>
+    <font face ="WR Tish Kid"> 🌍🚃สถานที่ท่องเที่ยวประเทศเยอรมนี🎡⛺</font>
+  </b>
+</center></h1>
+
+<body>
+  <!--divide map bounding box-->
+  <center>
+    <div id="map" style="width: 800px; height: 600px"></div>
+  </center>
+  <!--set center and link map-->
+<script>
+  var map = L.map('map').setView([51.1656910, 10.4515260],5);
+
+  mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+  L.tileLayer(
+  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; ' + mapLink,
+  maxZoom: 18,
+}).addTo(map);
+
+var greenIcon = L.icon({
+iconUrl: 'https://leafletjs.com/SlavaUkraini/examples/custom-icons/leaf-green.png',
+shadowUrl: 'https://leafletjs.com/SlavaUkraini/examples/custom-icons/leaf-shadow.png',
+
+ iconSize: [38, 95], // size of the icon
+shadowSize: [50, 64], // size of the shadow
+iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+shadowAnchor: [4, 62], // the same for the shadow
+popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+
+
+var marker = L.marker([48.135069, 11.582089],
+  {
+    draggable:true,
+    title:'Munich',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>Munich</b>")
+  .openPopup();
+
+  var marker = L.marker([49.381408, 10.186972],
+    {
+      draggable:true,
+      title:'Rothenburg ob der Tauber',
+      opacity:1.5
+    }
+  )
+    .addTo(map)
+    .bindPopup("<b>Rothenburg ob der Tauber</b>")
+    .openPopup();
+
+    var marker = L.marker([49.399166, 8.672464],
+      {
+        draggable:true,
+        title:'Heidelberg',
+        opacity:1.5
+      }
+    )
+      .addTo(map)
+      .bindPopup("<b>Heidelberg</b>")
+      .openPopup();
+
+      var marker = L.marker([53.521228, 13.396992],
+        {
+          draggable:true,
+          title:'Pergamon Museum',
+          opacity:1.5
+        }
+      )
+        .addTo(map)
+        .bindPopup("<b>Pergamon Museum</b>")
+        .openPopup();
+
+        var marker = L.marker([50.110625, 8.681844],
+          {
+            draggable:true,
+            title:'Frankfurt Romer',
+            opacity:1.5
+          }
+        )
+          .addTo(map)
+          .bindPopup("<b>Frankfurt Romer</b>")
+          .openPopup();
+
+</script>
+</body>
+</html>
